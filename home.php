@@ -6,18 +6,21 @@
 
 <!-- Include jQuery Mobile stylesheets -->
 <link rel="stylesheet" href="assets\css\jquery.mobile-1.4.5.css">
+<link rel="stylesheet" href="assets\css\temaku.css">
+
 
 </head>
 <body>
 
-<div data-role="page" id="pageKategori">
+<div data-role="page" id="pageMain" data-theme="c">
   <div data-role="header">
+	<a href="home.php" class="ui-btn ui-btn-corner-all ui-icon-home ui-btn-icon-notext ui-nodisc-icon">Beranda</a>
     <h1>Selamat Datang</h1>
   </div>
 
   <div data-role="main" class="ui-content">
 	<h2>Pilih Kategori</h2>
-		<ul data-role="listview">
+		<ul data-role="listview" data-inset="true">
 			
 			<?php
 		include("koneksi.php");
@@ -32,7 +35,7 @@
 	// tampilkan data
 	while($row = $result->fetch()) {
 		if($row!=$a){
-		echo "<li> <a href='itemlist.php?kategori=$row[0]' data-transition='pop'>$row[0]</a></li>";
+		echo "<li data-icon='false'> <a href='itemlist.php?kategori=$row[0]' data-transition='pop'>$row[0]</a></li>";
 		$a = $row;
 		}		
 		}

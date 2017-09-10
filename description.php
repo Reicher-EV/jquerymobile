@@ -6,13 +6,17 @@
 
 <!-- Include jQuery Mobile stylesheets -->
 <link rel="stylesheet" href="assets\css\jquery.mobile-1.4.5.css">
+<link rel="stylesheet" href="assets\css\temaku.css">
+
 
 </head>
 <body>
 
 
-<div data-role="page" id="pageBarang">
+<div data-role="page" id="pageMain" data-theme="c">
   <div data-role="header">
+  <a href="home.php" class="ui-btn ui-btn-corner-all ui-icon-home ui-btn-icon-notext ui-nodisc-icon">Beranda</a>
+  
     <h1>Diskripsi Barang</h1>
   </div>
 
@@ -29,7 +33,7 @@
 	
 	$row = $result->fetch();
 		
-		echo $row[0];
+		echo "<p>$row[0]</p>";
 		
 				
 		
@@ -37,7 +41,8 @@
 	// hapus koneksi
 	$dbh = null;
 	?>
-		</ul>
+		
+		<a href="home.php" class="ui-btn ui-btn-inline ui-btn-corner-all ui-icon-back ui-btn-icon-left ui-nodisc-icon" data-rel="back">Kembali</a>
   </div>
 
   <div data-role="footer">

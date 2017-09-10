@@ -6,20 +6,24 @@
 
 <!-- Include jQuery Mobile stylesheets -->
 <link rel="stylesheet" href="assets\css\jquery.mobile-1.4.5.css">
+<link rel="stylesheet" href="assets\css\temaku.css">
+
 
 </head>
 <body>
 
 
-<div data-role="page" id="pageBarang">
+<div data-role="page" id="pageMain" data-theme="c">
   <div data-role="header">
+  <a href="home.php" class="ui-btn ui-btn-corner-all ui-icon-home ui-btn-icon-notext ui-nodisc-icon">Beranda</a>
+    
   <?php $b = $_GET['kategori'];
     echo "<h1>List Barang dengan Kategori ".$b."</h1>";?>
   </div>
 
   <div data-role="main" class="ui-content">
     <h2>Pilih Barang</h2>
-		<ul data-role="listview">
+		<ul data-role="listview" data-inset="true">
 			
 			<?php
 		include("koneksi.php");
@@ -33,7 +37,7 @@
 	// tampilkan data
 	while($row = $result->fetch()) {
 		if($row!=$a){
-		echo "<li> <a href='description.php?nama=$row[0]'>$row[0]</a></li>";
+		echo "<li> <a href='description.php?nama=$row[0]' data-transition='pop'>$row[0]</a></li>";
 		$a = $row;
 		}		
 		}
@@ -42,6 +46,8 @@
 	$dbh = null;
 	?>
 		</ul>
+			<a href="#" class="ui-btn ui-btn-inline ui-btn-corner-all ui-icon-back ui-btn-icon-left ui-nodisc-icon" data-rel="back">Kembali</a>
+  
   </div>
 
   <div data-role="footer">
