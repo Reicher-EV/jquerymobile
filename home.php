@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<div data-role="page" id="pageMain" data-theme="c">
+<div data-role="page" id="pageMain" data-theme="b">
   <div data-role="header">
 	<a href="home.php" class="ui-btn ui-btn-corner-all ui-icon-home ui-btn-icon-notext ui-nodisc-icon">Beranda</a>
     <h1>Selamat Datang</h1>
