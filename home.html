@@ -1,0 +1,73 @@
+<html>
+<head>
+
+<!-- Include meta tag to ensure proper rendering and touch zooming -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Include jQuery Mobile stylesheets -->
+<link rel="stylesheet" href="assets\css\jquery.mobile-1.4.5.css">
+
+</head>
+<body>
+
+<div data-role="page" id="page01">
+  <div data-role="header">
+    <h1>Selamat Datang</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+	<h2>Pilih Kategori</h2>
+    
+		<?php
+		include("koneksi.php");
+ 
+		// jalankan query
+	$result = $dbh->query('SELECT * FROM Barang');
+ 
+	// tampilkan data
+	while($row = $result->fetch()) {
+	echo "$row[0] $row[1] $row[2] $row[3]"; 
+	echo "<br />";
+		}
+ 
+	// hapus koneksi
+	$dbh = null;
+?>
+	
+    <a href="#page02">Go to Page Two</a>
+  </div>
+
+  <div data-role="footer">
+    <h1>Footer Text</h1>
+  </div>
+</div> 
+
+<div data-role="page" id="page02">
+  <div data-role="header">
+    <h1>Welcome To My Homepage</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p>This is Page Two. If you click on the link below, it will take you to Page One.</p>
+    <a href="#page01">Go to Page One</a>
+  </div>
+
+  <div data-role="footer">
+    <h1>Footer Text</h1>
+  </div>
+</div> 
+
+
+
+
+
+<!-- Include the jQuery library -->
+<!--script src="assets\js\jquery-1.11.3.min.js"></script -->
+<script src="assets\js\jquery-1.11.3.min.js"></script>
+<!-- Include the jQuery Mobile library -->
+<script src="assets\js\jquery.mobile-1.4.5.min.js"></script>
+
+</body>
+
+
+</html>
