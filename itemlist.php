@@ -37,7 +37,7 @@
 	// tampilkan data
 	while($row = $result->fetch()) {
 		if($row!=$a){
-		echo "<li> <a href='description.php?nama=$row[0]' data-transition='pop'>$row[0]</a></li>";
+		echo "<li data-icon='false'> <a href='description.php?nama=$row[0]' data-transition='pop'>$row[0]</a></li>";
 		$a = $row;
 		}		
 		}
